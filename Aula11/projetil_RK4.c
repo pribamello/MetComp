@@ -8,7 +8,7 @@
 #define B_m 0
 
 void dsdt(double t, const double *s, double *fk);
-void euler(double *y, double x0, double h, int N, void (*dydx)(double x, const double *y, double *f));
+void RungeKutta4(double *y, double x0, double h, int N, void (*dydx)(double x, const double *y, double *f));
 
 int main(){
 double h = 1.e-4, t = 0;

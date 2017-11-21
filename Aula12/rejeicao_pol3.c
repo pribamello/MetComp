@@ -17,7 +17,7 @@ int main(){
     dy = (base/Ndiv);
     FILE *saida = fopen("rejeicao_pol3.dat","w"); //Cria arquivo de saida
 
-    //Aloca memória para o histograma
+    //Aloca memÃ³ria para o histograma
     bin = (int *) malloc( (Ndiv)*sizeof(int));
     if ( bin == NULL ){
       printf ("nao foi possivel alocar a memoria");
@@ -33,9 +33,9 @@ int main(){
     {
 	//Sorteia y e z, tal que z 'e o limite superior
 	z = a + (max - a )*((double)rand())/RAND_MAX; // z esta entre 0  e fmax
-	y = a + (3. - a)*((double)rand())/RAND_MAX; //pode ser usado 2.99 como limite ao invés de 3 para evita que o programa sorteie y = 3 e cause overflow
+	y = a + (b - a)*((double)rand())/RAND_MAX; //pode ser usado 2.99 como limite ao invÃ©s de 3 para evitar que o programa sorteie y = 3 e cause overflow
 
-	//Se f(y) é maior do que z  o valor de y é aceito
+	//Se f(y) Ã© maior do que z  o valor de y Ã© aceito
 	if(funcao(y)>z){
         j=(int) ( (y-a)/dy );
         Nmomento1 = Nmomento1 + y;
@@ -52,7 +52,7 @@ int main(){
         bin[j]++;
         n++;
 	}
-	//se f(y) é menor que z o valor de y é rejeitado e o loop volta a sortear um novo z
+	//se f(y) Ã© menor que z o valor de y Ã© rejeitado e o loop volta a sortear um novo z
 }
 
 //imprime os valores obtidos em um arquivo.dat
